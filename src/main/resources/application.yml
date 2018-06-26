@@ -1,0 +1,65 @@
+spring:
+    application:
+        name: agrdata-mobile
+    jackson:
+        date-format: yyyy-MM-dd HH:mm:ss
+        time-zone: GMT+8
+        default-property-inclusion: NON_NULL
+        serialization:
+          indent-output: true #格式化输出的json字符串
+    
+    datasource: 
+      name: agrdata
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://192.168.1.86:3306/agrdata-cms?characterEncoding=utf8&useSSL=false 
+      username: root
+      password: Yfkj_5677511
+      sqlScriptEncoding: UTF-8
+    
+    jpa: 
+      database: MYSQL
+      show-sql: true  #打印sql语句
+      generate-ddl: true
+      
+      hibernate: 
+         ddl-auto: none ## Hibernate ddl auto (create, create-drop, update)实体类维护数据库表结构的具体行为
+       
+    thymeleaf:
+      enabled: true
+      cache: false
+      check-template: true
+      check-template-location: true
+      content-type: text/html; charset=utf-8
+      encoding: UTF-8
+      mode: HTML5
+      prefix: classpath:/templates/
+      suffix: .html 
+      
+    batch: 
+      initializer:
+        enabled: true
+      job:
+        enabled: false
+
+es:
+ clusterName: elasticsearch
+ ip: 192.168.1.81
+#java连接es服务的专用端口
+ port: 9300
+#搜索引擎的的索引名
+ index: test
+#搜索引擎的索引type名称
+ type: sum
+ 
+#中间文件的存放目录
+filePath: E:\\
+
+#server:
+#    port: 9094
+#    tomcat: 
+#      uri-encoding: UTF-8
+     
+logging:
+  level:
+    org.springframework.boot.web: debug 
+
