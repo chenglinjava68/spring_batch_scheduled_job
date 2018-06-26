@@ -47,7 +47,7 @@ es:
 #java连接es服务的专用端口
  port: 9300
 #搜索引擎的的索引名
- index: test
+ index: agrdata_v2
 #搜索引擎的索引type名称
  type: sum
  
